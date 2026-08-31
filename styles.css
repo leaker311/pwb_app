@@ -13,10 +13,10 @@ html, body {
   top: 6.6%; left: 16.3%; width: 67.5%; height: 36.7%;
   background: rgba(255,0,0,0.4);
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.32em;
-  line-height: 0.95;
+  line-height: 0.75;
   white-space: pre;
   color: #35e035;
   text-shadow: 0 0 3px rgba(80,255,80,0.5);
