@@ -61,21 +61,25 @@ document.querySelectorAll("[data-key]").forEach((el) => {
   });
 });
 
+const LETTER_SPACING_EM = 0.32;
+
 function fitText() {
   const screen = document.getElementById("screen");
+  const cs = getComputedStyle(screen);
   const probe = document.createElement("span");
   probe.style.cssText =
-    "visibility:hidden; position:absolute; white-space:pre; " +
-    "font-family:" + getComputedStyle(screen).fontFamily + ";" +
-    "letter-spacing:" + getComputedStyle(screen).letterSpacing + ";" +
+    "visibility:hidden; position:absolute; white-space:pre;" +
+    "font-family:" + cs.fontFamily + ";" +
+    "font-weight:" + cs.fontWeight + ";" +
+    "letter-spacing:" + LETTER_SPACING_EM + "em;" +
     "font-size:100px;";
   probe.textContent = "0".repeat(COLS);
   document.body.appendChild(probe);
 
-  const scale = screen.clientWidth / probe.getBoundingClientRect().width;
+  const w = probe.getBoundingClientRect().width;
   probe.remove();
 
-  screen.style.fontSize = (100 * scale * 0.97) + "px";
+  screen.style.fontSize = (100 * (screen.clientWidth / w) * 0.97) + "px";
 }
 
 window.addEventListener("resize", fitText);
