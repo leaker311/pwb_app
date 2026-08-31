@@ -32,6 +32,8 @@ const PAGES = [
 
 let page = 0;
 
+const ROWS = 14;
+
 function render() {
   const p = PAGES[page];
   const counter = `${page + 1}/${PAGES.length}`;
@@ -39,16 +41,17 @@ function render() {
   const rows = [
     ["w", pad(p.title, counter + " \u2192")],
     ["w", p.subtitle],
+    ["g", pad("SOULS----", "FWDWT------"), "sm"],
     ...p.lines,
   ];
 
-  // pad the page out so the footer always sits at the bottom
-  while (rows.length < 14) rows.push(["g", ""]);
+  while (rows.length < ROWS - FOOTER.length) rows.push(["g", ""]);
   rows.push(...FOOTER);
 
   document.getElementById("screen").innerHTML = rows
-    .map(([c, t]) => `<span class="${c}">${t || " "}</span>`)
-    .join("\n");
+    .map(([c, t, size]) =>
+      `<span class="${c} ${size || ""}">${t || " "}</span>`)
+    .join("");
 
   fitText();
 }
