@@ -11,11 +11,6 @@ const LINES = [
 
 document.getElementById("screen").textContent = LINES.join("\n");
 
-// --- CALIBRATION (delete when done) ---
-const cdu = document.querySelector(".cdu");
-const cal = document.getElementById("cal");
-let pts = [];
-
 cdu.addEventListener("click", (e) => {
   const r = cdu.getBoundingClientRect();
   const x = ((e.clientX - r.left) / r.width) * 100;
@@ -32,3 +27,8 @@ cdu.addEventListener("click", (e) => {
     cal.textContent = `corner 1 set — now click the opposite corner`;
   }
 });
+
+// --- CALIBRATION (delete when done) ---
+const cdu = document.querySelector(".cdu");
+const cal = document.getElementById("cal");
+let pts = [];
