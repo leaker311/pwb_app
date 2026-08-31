@@ -27,6 +27,7 @@ const PAGES = [
       ["g", "-".repeat(COLS)],
     ],
   },
+  { title: "ACARS MSG DISPLAY", subtitle: "PAGE TWO TEST", lines: [] },
 ];
 
 let page = 0;
@@ -42,7 +43,7 @@ function render() {
   ];
 
   // pad the page out so the footer always sits at the bottom
-  while (rows.length < 12) rows.push(["g", ""]);
+  while (rows.length < 14) rows.push(["g", ""]);
   rows.push(...FOOTER);
 
   document.getElementById("screen").innerHTML = rows
