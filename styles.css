@@ -1,8 +1,11 @@
 html, body {
-  margin: 0; height: 100%;
+  margin: 0;
+  height: 100%;
   background: #000;
-  display: grid; place-items: center;
-  -webkit-user-select: none; -webkit-touch-callout: none;
+  display: grid;
+  place-items: center;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .cdu { position: relative; }
@@ -10,26 +13,34 @@ html, body {
 
 .screen {
   position: absolute;
-  top: 6.6%; left: 16.3%; width: 67.5%; height: 36.7%;
-  background: rgba(255,0,0,0.4);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-weight: 500;
-  letter-spacing: 0.32em;
-  white-space: pre;
-  color: #35e035;
-  text-shadow: 0 0 3px rgba(80,255,80,0.5);
+  top: 6.6%;
+  left: 16.3%;
+  width: 67.5%;
+  height: 35.5%;
+
+  background: rgba(255, 0, 0, 0.4);   /* set to #000 when calibrated */
   overflow: hidden;
 
   display: grid;
   grid-template-rows: repeat(14, 1fr);
   align-items: center;
+
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  white-space: pre;
+  color: #35e035;
+  text-shadow: 0 0 3px rgba(80, 255, 80, 0.5);
 }
 
 .screen span { display: block; line-height: 1; }
+.screen .w  { color: #ffffff; }
+.screen .g  { color: #35e035; }
+.screen .c  { color: #45d9d9; }
 .screen .sm { font-size: 0.72em; }
 
 .key { position: absolute; }
-.key:active { background: rgba(255,255,255,0.18); }
+.key:active { background: rgba(255, 255, 255, 0.18); }
 
 #cal {
   position: fixed; bottom: 0; left: 0; right: 0;
