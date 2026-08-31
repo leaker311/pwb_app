@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.screen {
+  color: #35e035;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  line-height: 1.9;
+  white-space: pre;
+  text-shadow: 0 0 3px rgba(80, 255, 80, 0.5);
+  padding: 24px;
+}
+
+#ref {
+  position: absolute; top: 24px; left: 24px;
+  opacity: 0.5; pointer-events: none;
+}
